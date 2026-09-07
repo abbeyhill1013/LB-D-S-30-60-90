@@ -1,41 +1,29 @@
 # Margin Dashboard
 
-Tool #3 — build third, after the estimate assistant is running.
+**Priority: 3**
 
-Status: Not started. See `TRACKER.md` (Day 31-60).
+## What it does
 
-## Purpose
+Portfolio-wide view of hours burned vs. milestones complete, one page.
 
-One page, portfolio-wide: hours burned vs. milestones complete, for every
-active engagement. This is where the 70/70 margin-watch rule becomes
-visible instead of theoretical — flag any engagement at 70% hours burned
-with under 70% of milestones complete.
+## The 70/70 rule
+
+Flag any engagement at 70% hours burned with under 70% of milestones complete.
+On fixed-fee, catching drift at 70% rather than 100% is the difference between
+a change order and an absorbed loss.
 
 ## Inputs
-
-- Engagement register (Microsoft Lists)
-- Capacity/allocation (Microsoft Lists)
-- Jira-synced hours (via the one-way Jira -> Lists sync)
+- Hours logged per engagement
+- Milestone completion from Lists
+- Fee and target margin from the engagement record
 
 ## Output
+Single-page view plus an alert feed. Feeds automation #3.
 
-Portfolio-wide margin view, one page. Feeds Automation #3 (margin watch),
-which alerts on the same 70/70 threshold this dashboard displays. Exact
-output template TBD — add here once decided.
+## Design notes
+- Continuous, not monthly. A monthly margin review is a postmortem.
+- Alert must be actionable: which engagement, how far off, what the change
+  order conversation would cover.
 
-## Design rule
-
-Must reduce per-engagement effort or catch a problem earlier. This tool's
-whole job is the second half of that rule: surfacing a margin problem
-before it's unrecoverable on a fixed-fee engagement.
-
-## Test data
-
-Synthetic only. No client names, actual fees, margins, or CRM/Jira exports
-— see the content boundary in `CLAUDE.md`.
-
-## Open questions
-
-- Refresh cadence — real-time off the Jira sync, or daily/weekly snapshot?
-- Does this live as a Lists view, a Power BI report, or a generated
-  one-pager?
+## Status
+Not started.

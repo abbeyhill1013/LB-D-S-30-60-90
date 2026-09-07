@@ -1,41 +1,29 @@
-# Status Generator
+# Status Report Generator
 
-Tool #1 — build first. Biggest recurring time drain at 15 engagements.
+**Priority: 1** — the biggest recurring time drain. At 15 engagements, writing
+status by hand is most of a workday every week.
 
-Status: Not started. See `TRACKER.md` (Day 0-30).
+## What it does
 
-## Purpose
-
-Turn Jira issue activity and the RAID log into a weekly status draft for
-each engagement, so a PM covering 9-15 engagements isn't assembling status
-by hand every week.
+Reads engagement state, drafts a status report per engagement in the standard
+format, routes to review. Target: 5 minutes of editing per report instead of
+30-40 minutes of writing.
 
 ## Inputs
-
-- Jira (technical execution data, synced one-way into Microsoft Lists per
-  the architecture in `CLAUDE.md` — never read/write Jira directly for
-  portfolio reporting)
-- RAID list (Microsoft Lists)
-- Engagement register (Microsoft Lists) — for tier, pattern, and band context
+- Jira: issue status, completions, blockers for the engagement's project
+- Lists: RAID entries, milestone status, hours burned
+- Previous week's status (for continuity — "next period" becomes "completed")
 
 ## Output
+`templates/status-report.md`, populated, one file per engagement.
 
-Drafts into `templates/status-report.md`. If that template changes, this
-tool needs updating — the output contract runs template -> tool, not the
-other way around.
+## Design notes
+- Draft, never send. A human reviews every one.
+- Green engagements still get a report; the point is async status replacing
+  meetings, not skipping communication.
+- Internal margin footer is stripped from the client-facing version.
+- Narrative section is the hard part — it must read as written, not generated.
+  Feed it the previous week for continuity.
 
-## Design rule
-
-Must reduce per-engagement effort, not add to it. A generator that requires
-as much manual cleanup as writing status from scratch is a net loss at this
-volume.
-
-## Test data
-
-Synthetic only. No client names, engagement data, fees, or Jira/CRM exports
-— see the content boundary in `CLAUDE.md`.
-
-## Open questions
-
-- Draft quality bar: fully client-ready, or PM-reviewed-then-sent?
-- Per-tier behavior: does Tier C get a lighter draft than Tier A?
+## Status
+Not started.
