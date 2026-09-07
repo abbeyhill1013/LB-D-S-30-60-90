@@ -1,16 +1,30 @@
-# tools/
+# Internal Tools
 
-Internal tooling builds, one subfolder per tool, in build-priority order (see
-`CLAUDE.md`). Each tool should reduce per-engagement effort — that is the bar
-for whether it belongs here.
+Build order is payback order. Do not skip ahead.
 
-Build order:
+| # | Tool | Directory | Purpose |
+|---|---|---|---|
+| 1 | Status generator | `status-generator/` | Jira + RAID -> weekly status drafts |
+| 2 | Estimate assistant | `estimate-assistant/` | Pattern + actuals -> BOE draft |
+| 3 | Margin dashboard | `margin-dashboard/` | Burn vs. completion, portfolio-wide |
+| 4 | Closeout drafter | (later) | Engagement record -> closeout memo |
+| 5 | QBR assembler | (later) | Outcomes, utilization, proposal |
 
-1. **Status report generator** — biggest recurring time drain at 15
-   engagements
-2. **Estimate assistant** — pattern library + historical actuals -> BOE draft
-3. **Margin dashboard** — burn vs. completion, portfolio-wide, one page
-4. **Closeout memo drafter** — includes expansion signal extraction
-5. **QBR pack assembler**
+## Design rule
+
+Every tool must reduce per-engagement effort or catch a problem earlier. At
+9-15 concurrent engagements, a tool that adds per-engagement work is a net loss
+regardless of how good its output is.
+
+## Output contract
+
+Tools output to the templates in `templates/`. If a template changes, its tool
+needs updating.
+
+## Test data
+
+Synthetic only. See the content boundary in CLAUDE.md.
+
+---
 
 See `TRACKER.md` in the repo root for current build status.
