@@ -1,0 +1,2 @@
+pattern,band,synthetic_engagement_id,date_closed,phase,wbs_task,planned_hours,actual_hours,variance_hours,variance_pct,notes
+[PATTERN],Standard,ENG-DEMO-001,[YYYY-MM-DD],Mobilization,[WBS TASK],0,0,0,0%,Example row - replace with real closed-engagement data. Delete once real rows exist.

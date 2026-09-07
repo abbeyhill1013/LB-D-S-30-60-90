@@ -9,7 +9,7 @@ by WBS element, plus SOW-ready assumptions and exclusions.
 
 ## Inputs
 - `patterns/` — the selected pattern
-- Pattern actuals log — historical variance for calibration
+- `estimating/pattern-actuals-log.csv` — historical variance for calibration
 - Client-specific deltas, entered by the estimator
 
 ## Output

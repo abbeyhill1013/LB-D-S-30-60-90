@@ -93,6 +93,7 @@ being run by hand.
 |---|---|---|---|
 | `estimating/estimate-model.xlsx` | Not started | | Excel — calculation is the point. |
 | `estimating/conventions.md` | Not started | | How to handle deals that don't cleanly fit a pattern. |
+| `estimating/pattern-actuals-log.csv` | Done | | Schema scaffolded (planned/actual/variance by pattern, band, phase). Awaiting real closed-engagement rows. |
 | Tool #2 — Estimate assistant shipped | Not started | | Pattern library + historical actuals → BOE draft. |
 
 ### Margin visibility
@@ -170,3 +171,5 @@ ad hoc spreadsheets or memory.
 | Date | Change |
 |---|---|
 | 2026-09-07 | Tracker created. Repo scaffold, `CLAUDE.md`, and `patterns/_PATTERN-TEMPLATE.md` in place. |
+| 2026-09-07 | `tools/` scaffolded with status-generator, estimate-assistant, margin-dashboard folders and full specs. |
+| 2026-09-07 | `estimating/pattern-actuals-log.csv` schema added — historical variance input for the estimate assistant. |
